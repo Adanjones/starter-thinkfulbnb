@@ -51,32 +51,44 @@ main img {
 }
 
 /* -------  Navigation ------- */
+:root {
+  --text: #fff;
+  --hover: #000000;
+}
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 0px;
   text-align: center;
+  align-items: center;
+
 }
 
 .logo {
   font-family: "Pangolin", cursive;
   font-size: 72px;
-  color: #fff;
+  color: var(--text);
 }
 
-header nav ul li {
+header nav {
+  display: flex;
+  justify-content: center
+}
+
+header nav ul {
+  display: flex;
   list-style-type: none;
 }
 
 header nav ul li a {
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
-  padding: 0 20px 0 0;
+  padding: 0 10px 0 0;
 }
 
 header nav ul li a:hover {
-  color: #bdbdbd;
-  text-decoration: none;
+  color: var(--hover);
+  text-decoration: underline;
 }
 
 /* -------  Search Form ------- */
@@ -117,3 +129,74 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 600px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  header h1 {
+    margin: 14px 0;
+    padding-top: 0;
+  }
+
+  header nav {
+    margin-top: 8px;
+  }
+
+  header nav ul li a:hover {
+    color: #bdbdbd;
+  }
+}
+
+/* Media Query for Desktop View */
+@media screen and (min-width: 768px) {
+  /* -------  Navigation ------- */
+  header {
+    padding: 20px 40px 0 40px; /* Adjust padding for desktop */
+  }
+
+  .logo {
+    font-size: 48px; /* Decrease logo size for desktop */
+  }
+
+  nav {
+    padding-top: 10px; /* Add space between logo and navigation for desktop */
+  }
+
+  header nav ul li {
+    display: inline-block; /* Align navigation links horizontally for desktop */
+    margin-right: 20px; /* Add space between navigation links for desktop */
+  }
+
+  /* -------  Search Form ------- */
+  form {
+    width: 100%; /* Ensure form takes full width on desktop */
+    max-width: 600px; /* Limit form width on desktop */
+    margin: 0 auto; /* Center the form horizontally on desktop */
+  }
+
+  form label {
+    display: block; /* Display labels as block elements for better alignment */
+    margin-bottom: 5px; /* Add space between label and input field */
+  }
+
+  form select,
+  form input {
+    width: calc(50% - 10px); /* Adjust width of input fields for desktop */
+    margin-right: 10px; /* Add space between input fields */
+    margin-bottom: 10px; /* Add space between input fields */
+  }
+
+  form button {
+    width: 100%; /* Ensure button takes full width on desktop */
+    margin-top: 10px; /* Add space between input fields and button */
+  }
+
+  /* -------  Footer ------- */
+  footer {
+    padding: 20px 40px; /* Adjust padding for desktop */
+  }
+}
