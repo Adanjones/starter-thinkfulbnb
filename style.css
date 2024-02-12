@@ -31,7 +31,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 300px;
 }
 
 /* ---  Groups & Items --- */
@@ -53,7 +53,7 @@ main img {
 /* -------  Navigation ------- */
 :root {
   --text: #fff;
-  --hover: #000000;
+  --hover: #bdbdbd;
 }
 
 header {
@@ -68,6 +68,7 @@ header {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: var(--text);
+  margin: 20px
 }
 
 header nav {
@@ -93,20 +94,28 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
   border: 2px solid #ff385c;
   padding: 10px;
 }
 
 form label {
   font-weight: bold;
+  width: 100%; 
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
 }
 
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 140px; 
 }
-
 form button {
   background-color: #ff385c;
   border: none;
@@ -130,73 +139,76 @@ footer p {
 
 /* -------  Media Query ------- */
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 490px) {
   header {
     display: flex;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0px;
   }
 
   header h1 {
-    margin: 14px 0;
+    margin: 0;
     padding-top: 0;
   }
 
   header nav {
-    margin-top: 8px;
+    margin-top: 0px;
   }
 
   header nav ul li a:hover {
     color: #bdbdbd;
   }
-}
-
-/* Media Query for Desktop View */
-@media screen and (min-width: 768px) {
-  /* -------  Navigation ------- */
-  header {
-    padding: 20px 40px 0 40px; /* Adjust padding for desktop */
-  }
 
   .logo {
-    font-size: 48px; /* Decrease logo size for desktop */
+    margin: 10px 0 10px 20px
+    font-size: 40px; 
   }
 
   nav {
-    padding-top: 10px; /* Add space between logo and navigation for desktop */
+    padding-top: 0px; 
   }
 
   header nav ul li {
-    display: inline-block; /* Align navigation links horizontally for desktop */
-    margin-right: 20px; /* Add space between navigation links for desktop */
+    display: inline-block; 
+    margin-right: 20px; 
   }
-
+}
   /* -------  Search Form ------- */
   form {
-    width: 100%; /* Ensure form takes full width on desktop */
-    max-width: 600px; /* Limit form width on desktop */
-    margin: 0 auto; /* Center the form horizontally on desktop */
+    display: flex; 
+    flex-direction: center;
+    justify-content: center;
+    border: 2px solid #ff385c;
+    
+    width: 100%; /* Make the form stretch from left to right of the screen */
   }
-
+  
   form label {
-    display: block; /* Display labels as block elements for better alignment */
-    margin-bottom: 5px; /* Add space between label and input field */
+    font-weight: bold;
+    display: flex;
   }
 
+  form div {
+    flex-direction: column;
+  }
+  
   form select,
   form input {
-    width: calc(50% - 10px); /* Adjust width of input fields for desktop */
-    margin-right: 10px; /* Add space between input fields */
-    margin-bottom: 10px; /* Add space between input fields */
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%; /* Make input fields take up full width */
   }
-
+  
   form button {
-    width: 100%; /* Ensure button takes full width on desktop */
-    margin-top: 10px; /* Add space between input fields and button */
+    background-color: #ff385c;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 15px;
+    width: 100%; /* Make the button take up full width */
   }
 
   /* -------  Footer ------- */
   footer {
-    padding: 20px 40px; /* Adjust padding for desktop */
+    padding: 20px 40px; 
   }
-}
