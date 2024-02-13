@@ -1,7 +1,7 @@
 /* -------  General Styles ------- */
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 h2 {
@@ -26,12 +26,12 @@ section {
 }
 
 section.alternate-background {
-  background-color: #00a699;
+  background-color: #00A699;
   color: #fff;
 }
 
 main img {
-  width: 300px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -51,59 +51,51 @@ main img {
 }
 
 /* -------  Navigation ------- */
-:root {
-  --text: #fff;
-  --hover: #bdbdbd;
-}
 
 header {
-  background-color: #ff385c;
-  padding: 0px;
+  background-color: #FF385C;
+  padding: 20px 20px 0 20px;
   text-align: center;
-  align-items: center;
-
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
-  color: var(--text);
-  margin: 20px
+  font-size: 57px;
+  color: #fff;
 }
 
 header nav {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 header nav ul {
   display: flex;
+}
+
+header nav ul li {
   list-style-type: none;
 }
 
 header nav ul li a {
-  color: var(--text);
+  color: #fff;
   text-decoration: none;
-  padding: 0 10px 0 0;
+  padding: 0 20px 0 0;
 }
 
 header nav ul li a:hover {
-  color: var(--hover);
-  text-decoration: underline;
+  color: #bdbdbd;
+  text-decoration: none;
 }
 
 /* -------  Search Form ------- */
 form {
-  width: fit-content;
-  display: flex;
-  flex-wrap: wrap;
-  border: 2px solid #ff385c;
+  border: 2px solid #FF385C;
   padding: 10px;
 }
 
 form label {
   font-weight: bold;
-  width: 100%; 
 }
 
 form div {
@@ -111,13 +103,13 @@ form div {
   justify-content: space-between;
 }
 
-form select,
-form input {
+form select, form input {
   margin-bottom: 20px;
-  width: 140px; 
+  width: 140px;
 }
+
 form button {
-  background-color: #ff385c;
+  background-color: #FF385C;
   border: none;
   color: #fff;
   font-size: 24px;
@@ -128,7 +120,7 @@ form button {
 /* -------  Footer ------- */
 
 footer {
-  background-color: #ff385c;
+  background-color: #FF385C;
 }
 
 footer p {
@@ -139,76 +131,48 @@ footer p {
 
 /* -------  Media Query ------- */
 
-@media all and (min-width: 490px) {
+@media all and (min-width: 480px) {
   header {
     display: flex;
     justify-content: space-between;
-    padding: 0px;
-  }
-
-  header h1 {
-    margin: 0;
-    padding-top: 0;
-  }
-
-  header nav {
-    margin-top: 0px;
-  }
-
-  header nav ul li a:hover {
-    color: #bdbdbd;
+    padding: 0;
   }
 
   .logo {
-    margin: 10px 0 10px 20px
-    font-size: 40px; 
+    margin: 14px 0 14px 20px;
+    padding-top: 0;
+    font-size: 42px;
   }
 
-  nav {
-    padding-top: 0px; 
-  }
-
-  header nav ul li {
-    display: inline-block; 
-    margin-right: 20px; 
-  }
-}
-  /* -------  Search Form ------- */
-  form {
-    display: flex; 
-    flex-direction: center;
-    justify-content: center;
-    border: 2px solid #ff385c;
-    
-    width: 100%; /* Make the form stretch from left to right of the screen */
+  form select, form input {
+    margin-bottom: 20px;
+    width: 180px;
   }
   
-  form label {
-    font-weight: bold;
+  header nav ul {
+    align-items: center;
+  }
+
+  .group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  form {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   form div {
     flex-direction: column;
   }
-  
-  form select,
-  form input {
-    display: flex;
-    margin-bottom: 20px;
-    width: 100%; /* Make input fields take up full width */
-  }
-  
-  form button {
-    background-color: #ff385c;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    padding: 15px;
-    width: 100%; /* Make the button take up full width */
-  }
 
-  /* -------  Footer ------- */
-  footer {
-    padding: 20px 40px; 
+  form button {
+    flex: 1;
   }
+  
+  form select, form input {
+    margin-bottom: 0px;
+  }
+}
